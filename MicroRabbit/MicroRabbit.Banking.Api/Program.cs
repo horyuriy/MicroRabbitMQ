@@ -20,13 +20,13 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.Get
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-RegisterServices(builder.Services);
 
 builder.Services.AddDbContext<BankingDbContext>(options =>
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"))
 );
 
+RegisterServices(builder.Services);
 
 void RegisterServices(IServiceCollection services)
 {
